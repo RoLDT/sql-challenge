@@ -129,14 +129,15 @@ SELECT * from SalesDevelop LIMIT(10);
 
 --8. In descending order, list the frequency count of employee last names,
 --i.e., how many employees share each last name.
-CREATE VIEW LastName AS
+CREATE VIEW LastNames AS
 SELECT
 last_name,
 COUNT(emp_no) AS "Employees that share Last Name"
 FROM "Employees"
-GROUP BY last_name;
+GROUP BY last_name
+ORDER BY "Employees that share Last Name" DESC;
 
-SELECT *FROM LastName LIMIT(10);
+SELECT *FROM LastNames LIMIT(10);
 
 
 
